@@ -35,7 +35,7 @@ public class PassengerController {
 	}
 	
 	@PostMapping("/passengers")
-	public Passenger AddPassenger(@RequestBody Passenger passenger)
+	public String AddPassenger(@RequestBody Passenger passenger)
 	{
 		return service.AddPassenger(passenger);
 	}
@@ -51,4 +51,12 @@ public class PassengerController {
 	{
 		return service.DeletePassengerById(Id);
 	}
+
+	@PostMapping("/passengers/login")
+	public Passenger login(String Email, String Password)
+	{
+		System.out.println(Email + " " + Password);
+		return service.Login(Email, Password);
+	}
+	
 }

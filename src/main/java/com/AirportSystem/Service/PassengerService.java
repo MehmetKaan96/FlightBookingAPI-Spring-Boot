@@ -26,8 +26,17 @@ public class PassengerService implements IPassengerService{
 	}
 
 	@Override
-	public Passenger AddPassenger(Passenger passenger) {
-		return repo.save(passenger);
+	public String AddPassenger(Passenger passenger) {
+		try {
+			if(repo.PassengerControl(passenger.email, passenger.phone) == null){
+				 repo.save(passenger);
+				 return "Yolcu Eklendi!";
+			}else{
+				return "Girilen email veya telefon numarası zaten kayıtlı.";
+			}
+		} catch (Exception e) {
+			return e.getMessage();
+		}
 	}
 
 	@Override
@@ -49,5 +58,11 @@ public class PassengerService implements IPassengerService{
 			return e.getMessage();
 		}
 	}
+
+	@Override
+	public Passenger Login(String Email, String Password) {
+		return repo.Login(Email, Password);
+	}
+
 
 }

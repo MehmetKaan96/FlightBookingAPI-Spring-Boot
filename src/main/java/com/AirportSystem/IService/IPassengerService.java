@@ -10,10 +10,13 @@ public interface IPassengerService {
 	
 	public Passenger getPassengerById(Long Id);
 	
-	public Passenger AddPassenger(Passenger passenger);
+	public String AddPassenger(Passenger passenger);
 	
 	public String UpdatePassenger(Passenger passenger);
 	
 	public String DeletePassengerById(Long Id);
+
+	public Passenger Login(String Email, String Password);
+	
 
 }

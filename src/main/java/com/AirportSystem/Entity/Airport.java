@@ -26,6 +26,9 @@ public class Airport {
 	@Column(name = "airportName")
 	public String airportName;
 	
+	@Column(name = "airportCity")
+	public String airportCity;
+	
 	@Column(name = "airportCountry")
 	public String airportCountry;
 
