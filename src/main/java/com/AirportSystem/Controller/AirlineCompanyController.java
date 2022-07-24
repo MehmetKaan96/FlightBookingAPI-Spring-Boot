@@ -15,7 +15,7 @@ import com.AirportSystem.Entity.AirlineCompany;
 import com.AirportSystem.Service.AirlineCompanyService;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("/api")
 public class AirlineCompanyController {
 	
 	@Autowired
